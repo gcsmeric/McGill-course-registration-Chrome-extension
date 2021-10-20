@@ -1,2 +1,2 @@
 # mcgillextension
-chrome extension to get ratemyprofessors rating on mcgill course pages
+Chrome extension that directly links a professor's ratemyprofessors.com page in McGill course websites.

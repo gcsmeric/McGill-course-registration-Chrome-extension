@@ -16,16 +16,15 @@
   
     "content_scripts": [
         {
-          "matches": ["*://www.mcgill.ca/study/*/courses/*"],
+          "matches": ["*://www.mcgill.ca/study/*/courses/*", "*://www.ratemyprofessors.com/*"],
           "js": ["jquery.js", "mainscript.js"]
         }
       ],
   
     "permissions": [
       "tabs",
-      "storage",
       "activeTab",
-      "http://www.ratemyprofessors.com/",
+      "https://www.mcgill.ca/",
       "https://www.ratemyprofessors.com/"
     ]
   }
