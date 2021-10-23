@@ -19,12 +19,5 @@
           "matches": ["*://www.mcgill.ca/study/*/courses/*", "*://www.ratemyprofessors.com/*"],
           "js": ["jquery.js", "mainscript.js"]
         }
-      ],
-  
-    "permissions": [
-      "tabs",
-      "activeTab",
-      "https://www.mcgill.ca/",
-      "https://www.ratemyprofessors.com/"
-    ]
+      ]
   }

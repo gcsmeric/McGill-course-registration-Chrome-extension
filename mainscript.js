@@ -70,6 +70,10 @@ if (document.location.href.includes("mcgill.ca")) {
     }
     //verify that format is correct
     if (instArray[0]=="Instructors") {
+        //catch edge case where there are no instructors associated with course for academic year
+        if (instArray.length == 2) {
+            throw new Error("no instructors associated with course");
+        }
         //remove redundant initial array element "Instructors"
         instArray.shift();
         //pop end whitespace array element
