@@ -1,64 +1,4 @@
-//the search query should be https://www.ratemyprofessors.com/search/teachers?query=jordan+axt&sid=U2Nob29sLTE0Mzk=
-
-//resource 1 https://github.com/kennethtran91/RateMyProf/blob/master/contentscript.js
-//resource 2 https://greasyfork.org/fr-CA/scripts/371513-rate-my-professor-uw/code
-
-//fetching instructor names section from mcgill course webpage
-//COMMENT MORE
-
-//https://stackoverflow.com/questions/60471911/http-request-to-a-website-to-get-the-content-of-a-specific-html-element
-
-
-//WATCH THIS https://www.youtube.com/watch?v=yC7RvrsgLCI
-
-/*function include(filename, onload) {
-    var head = document.getElementsByTagName('head')[0];
-    var script = document.createElement('script');
-    script.src = filename;
-    script.type = 'text/javascript';
-    script.onload = script.onreadystatechange = function() {
-        if (script.readyState) {
-            if (script.readyState === 'complete' || script.readyState === 'loaded') {
-                script.onreadystatechange = null;                                                  
-                onload();
-            }
-        } 
-        else {
-            onload();          
-        }
-    };
-    head.appendChild(script);
-}
-
-include('http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js', function() {
-    $(document).ready(function() {
-        alert('the DOM is ready');
-    });
-});*/
-
-
-/*async function FetchHtml(url) {
-    let response = await fetch(url)
-    .then(response => {
-        if (!response.ok) {
-            alert("could not fetch");
-            throw new Error("Could not reach website.");
-        }
-        return response.json();
-    })
-    return await response.text(); // Returns it as Promise
-}
-async function getHTML(url) {
-    let html = await FetchHtml(url).then(text => {return text}); // Get html from the promise
-    alert(html);
-    return html;
-}*/
-
-/*var script = document.createElement('script');
-script.src = 'https://code.jquery.com/jquery-3.6.0.min.js';
-script.type = 'text/javascript';
-document.getElementsByTagName('head')[0].appendChild(script);*/
-
+//toggle script only if user is on a mcgill webpage
 if (document.location.href.includes("mcgill.ca")) {
 
     instructors = document.getElementsByClassName("catalog-instructors")[0].innerHTML;
@@ -142,46 +82,6 @@ if (document.location.href.includes("mcgill.ca")) {
             }
         }
         document.getElementsByClassName("catalog-instructors")[0].innerHTML = newInstructorsStr;
-
-
-
-        
-
-
-
-            /*chrome.runtime.sendMessage({query: urlvar}, function(response) {
-                var div = document.createElement('div');
-                div.innerHTML = response.source;
-                alert(div.innerHTML);
-            });*/
-
-            /*$.ajax({
-                url: 'https://www.yahoo.com',
-                method: "GET",
-                success: function (data, status, jqxhr) {
-                    console.log("Success");
-                    console.log(data);
-                },
-                error: function (jqxhr, status, error) {
-                    console.log("error oops");
-                    console.log(error);
-                }
-            })*/
-
-            //let returnedHTML = getHTML(urlvar);
-            
-            /*$.get(urlvar, function(responseText) {
-                alert(responseText);
-            });*/
-
-            /*var xhr = new XMLHttpRequest();
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState == XMLHttpRequest.DONE) {
-                    alert(xhr.responseText);
-                }
-            }
-            xhr.open('GET', 'http://google.com', true);
-            xhr.send(null);*/
 
     }
 }
